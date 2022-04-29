@@ -1,1 +1,9 @@
+title: Erain's repos
+description: Erian is learning
 theme: jekyll-theme-minimal
+
+deploy:
+  type: git
+  repo: git@github.com:ys11i0123/ys11i0123.github.io.git
+  branch: main
+
