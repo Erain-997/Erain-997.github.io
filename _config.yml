@@ -32,7 +32,9 @@ defaults:
 # description: Minimalism is a jekyll theme for minimalist
 
 github: https://github.com/Erain-997
-email: www.baidu.com
+email: https://mail.qq.com/
+weibo: https://weibo.com/n/Lemon%E4%B8%B6Damon
+
 rss: true
 
 plugins:
