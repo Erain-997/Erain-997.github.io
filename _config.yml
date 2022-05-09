@@ -1,6 +1,10 @@
+layout: post
 title: Erain's repos
+subtitle: Erain's sub-repos
+tags: welcoming
 description: Erian is learning
 theme: jekyll-theme-minimal
+comments: true
 
 deploy:
   type: git
