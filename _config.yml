@@ -3,7 +3,7 @@ title: Erain's repos1
 subtitle: Erain's sub-repos
 tags: welcoming
 description: Erian is learning
-theme: jekyll-theme-minimal
+#theme: jekyll-theme-minimal
 comments: true
 name: Erain's Workspace
 
@@ -32,6 +32,7 @@ defaults:
 # description: Minimalism is a jekyll theme for minimalist
 
 github: https://github.com/Erain-997
+email: www.baidu.com
 rss: true
 
 plugins:
