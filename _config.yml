@@ -5,12 +5,12 @@ tags: welcoming
 description: Erian is learning
 theme: jekyll-theme-minimal
 comments: true
-Site source: 人工智能
+name: Erain's Workspace
 
-deploy:
-  type: git
-  repo: git@github.com:ys11i0123/ys11i0123.github.io.git
-  branch: main
+#deploy:
+#  type: git
+#  repo: git@github.com:ys11i0123/ys11i0123.github.io.git
+#  branch: main
 
 sass:
   style: compressed
@@ -29,10 +29,9 @@ defaults:
       image: true
 
 # title: Minimalism
-name: minimalism
 # description: Minimalism is a jekyll theme for minimalist
 
-github: https://github.com/showzeng/Minimalism
+github: https://github.com/Erain-997
 rss: true
 
 plugins:
