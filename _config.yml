@@ -28,8 +28,6 @@ defaults:
     values:
       image: true
 
-# title: Minimalism
-# description: Minimalism is a jekyll theme for minimalist
 
 github: https://github.com/Erain-997
 email: https://mail.qq.com/
