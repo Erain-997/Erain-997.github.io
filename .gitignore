@@ -1,5 +1,3 @@
-##ignore this file##
-.idea/
 *.gem
 .bundle
 .sass-cache
