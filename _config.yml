@@ -7,7 +7,7 @@ description: "Every failure is leading towards success."
 keyword: "Erain Wulala"
 url: "http://Erain.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Erain-997/Erain-997.github.iot" # you code repository
+github_repo: "https://github.com/Erain-997/Erain-997.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
