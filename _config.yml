@@ -3,14 +3,14 @@ title: Erain's repos
 subtitle: Erain's sub-repos
 tags: welcoming
 description: Erian is learning
-#theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
 comments: true
 name: Erain's Workspace
 
-#deploy:
-#  type: git
-#  repo: git@github.com:ys11i0123/ys11i0123.github.io.git
-#  branch: main
+deploy:
+ type: git
+ repo: git@github.com:ys11i0123/ys11i0123.github.io.git
+ branch: main
 
 sass:
   style: compressed
