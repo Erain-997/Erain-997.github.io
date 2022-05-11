@@ -1,3 +1,9 @@
+---
+layout: posts
+title: 文章
+---
+
+
 # Erain-997.github.io
 
 Erain learning...
