@@ -1,3 +1,17 @@
+layout: post
+title: Erain's repos
+subtitle: Erain's sub-repos
+tags: welcoming
+description: Erian is learning
+theme: jekyll-theme-minimal
+comments: true
+name: Erain's Workspace
+
+deploy:
+ type: git
+ repo: git@github.com:ys11i0123/ys11i0123.github.io.git
+ branch: main
+
 sass:
   style: compressed
 
@@ -14,11 +28,11 @@ defaults:
     values:
       image: true
 
-title: Minimalism
-name: minimalism
-description: Minimalism is a jekyll theme for minimalist
 
-github: https://github.com/showzeng/Minimalism
+github: https://github.com/Erain-997
+email: https://mail.qq.com/
+weibo: https://weibo.com/n/Lemon%E4%B8%B6Damon
+
 rss: true
 
 plugins:
