@@ -10,6 +10,8 @@ Erain learning...
 
 - [go101](https://gfw.go101.org/article/line-break-rules.html)
 
+- [Go](http://docscn.studygolang.com/pkg/fmt/)
+
 # 面试
 
 - [Go语言面试题](https://topgoer.cn/docs/gomianshiti/mian56)
