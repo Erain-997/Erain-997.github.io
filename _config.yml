@@ -11,7 +11,7 @@ github_repo: "https://github.com/Erain-997/Erain-997.github.io" # you code repos
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Goals determine what you going to be!"
+sidebar-about-description: "Being what you want to be!"
 sidebar-avatar: /img/about-head.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -19,12 +19,12 @@ sidebar-avatar: /img/about-head.jpg      # use absolute URL, seeing it's used in
 # SNS settings
 RSS: false
 # weibo_username:     Erain
-main_scene: https://github.com/Erain-997/Erain-997.github.io
-zhihu_username: Erain-997
-github_username: Erain-997
-facebook_username: Erain-997
-jianshu_username: Erain-997
-#twitter_username:   Erain
+main_scene: https://Erain-997.github.io
+# zhihu_username: Erain-997
+# github_username: Erain-997
+# facebook_username: Erain-997
+# jianshu_username: Erain-997
+# twitter_username:   Erain
 
 
 
@@ -54,7 +54,7 @@ input: GFM                            # use Github Flavored Markdown !important
 
 # 评论系统
 # Disqus（https://disqus.com/）
-disqus_username: Erain
+disqus_username: Erain-997
 
 # Gitalk
 gitalk:
@@ -79,7 +79,7 @@ ga_domain: auto               # 默认的是 auto, 这里我是自定义了的�
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 0              # 相同标签数量大于这个数，才会出现在首页
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
