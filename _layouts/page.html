@@ -23,8 +23,8 @@ layout: default
     <div class="row">
         <!-- PostList Container -->
         <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-8 col-md-offset-2
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
                 col-sm-12
                 col-xs-12
                 postlist-container
@@ -61,10 +61,19 @@ layout: default
                             </a>
                         </li>
 
-                        {% if site.left-description %}
+                        <!-- {% if site.left-description %}
                         <p>{{site.left-description}}</p>
-                        {% endif %}
+                        {% endif %} -->
 
+                        <div class="tags">
+                            {% for tag in site.categories %}
+                            
+                            <a href="{{ site.baseurl }}/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+                                {{ tag[0] }}
+                            </a>
+                            
+                            {% endfor %}
+                        </div>
 
 
                     </ul>
