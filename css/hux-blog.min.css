@@ -2,6 +2,9 @@
     .post-container, .sidebar-container {
         padding-right: 5%
     }
+    .left-sidebar-container {
+        padding-left: 5%
+    }
 }
 
 @media (min-width: 768px) {
@@ -56,6 +59,54 @@
 .sidebar-container .short-about .list-inline > li {
     padding-left: 0
 }
+
+.left-sidebar-container {
+    color: #bfbfbf;
+    font-size: 14px
+}
+
+.left-sidebar-container h5 {
+    color: gray;
+    padding-bottom: 1em
+}
+
+.left-sidebar-container h5 a {
+    color: gray !important;
+    text-decoration: none
+}
+
+.left-sidebar-container a {
+    color: #bfbfbf !important
+}
+
+.left-sidebar-container a:hover, .left-sidebar-container a:active {
+    color: #0085a1 !important
+}
+
+.left-sidebar-container .tags a {
+    border-color: #bfbfbf
+}
+
+.left-sidebar-container .tags a:hover, .left-sidebar-container .tags a:active {
+    border-color: #0085a1
+}
+
+.left-sidebar-container .left-short-about img {
+    width: 80%;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 20px
+}
+
+.left-sidebar-container .left-short-about p {
+    margin-top: 0;
+    margin-bottom: 20px
+}
+
+.left-sidebar-container .left-short-about .list-inline > li {
+    padding-left: 0
+}
+
 
 .catalog-container {
     padding: 0

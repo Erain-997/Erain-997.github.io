@@ -154,6 +154,25 @@ layout: default
                 </ul>
                 {% endif %}
             </div>
+
+            <!-- Left Sidebar Container -->
+            <div class="left-sidebar-container
+            col-lg-8 col-lg-offset-6
+            col-md-10 col-md-offset-9 ">
+
+            <!-- Featured Tags -->
+
+            <!-- Friends Blog -->
+            {% if site.friends %}
+            <hr>
+            <h5>FRIENDS</h5>
+            <ul class="list-inline">
+                {% for friend in site.friends %}
+                    <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
         </div>
     </div>
 </article>
