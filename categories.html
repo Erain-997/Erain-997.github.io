@@ -1,5 +1,5 @@
 ---
-title: categories
+title: Categories
 layout: default
 ---
 <!-- Page Header -->
@@ -9,86 +9,25 @@ layout: default
 <div class="container">
   <div class="row">
     <!-- USE SIDEBAR -->
-
-    <!-- PostList Container -->
-    <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12
-        col-xs-12 postlist-container">
-      <!-- Article List -->
-
-      {%- assign _sorted_list = site.posts -%}
-      {%- assign _sorted_list = _sorted_list | sort: 'date' -%}
-      {%- assign _sorted_list = _sorted_list | reverse -%}
-
-
-      {%- for _article in _sorted_list -%}
-      {%- assign _categories = '' -%}
-      {%- for _cat in _article.categories -%}
-      {%- assign _cat_encode = _cat | strip | url_encode -%}
-      {%- if forloop.last -%}
-      {%- assign _categories = _categories | append: _cat_encode -%}
-      {%- else -%}
-      {%- assign _categories = _categories | append: _cat_encode | append: ',' -%}
-      {%- endif -%}
-      {%- endfor -%}
-
-      {% comment %} group by year {% endcomment %}
-      {%- assign _currentdate = _article.date | date: '%Y' -%}
-      {%- if _currentdate != _date -%}
-      {%- unless forloop.first -%}</section>{%- endunless -%}
-      <section>
-        <span class="fa listing-seperator">
-          <span class="tag-text">{{ _currentdate }}</span>
-        </span>
-        {%- assign _date = _currentdate -%}
-        {%- endif -%}
-
-        <div class="post-preview item" data-tags="{{ _categories }}">
-          <a href="{{ _article.url | prepend: site.baseurl }}">
-            <h2 class="post-title">
-              {{ _article.title }}
-            </h2>
-            {% if _article.subtitle %}
-            <h3 class="post-subtitle">
-              {{ _article.subtitle }}
-            </h3>
-            {% endif %}
-          </a>
-        </div>
-        {%- if forloop.last -%}
-      </section>{%- endif -%}
-      {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
     <!-- Sidebar Container -->
-    <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12
         col-xs-12 sidebar-container">
       {% include sidebar-search.html %}
       <!-- categories -->
       <section>
-        {% if include.bottom %}
-        <hr class="hidden-sm hidden-xs">
-        {% endif %}
-        <h5><a href="{{'/categories/#categories/' | prepend: site.baseurl }}">Categories</a></h5>
+        <h3><a href="{{'/categories/#categories/' | prepend: site.baseurl }}">Categories</a></h3>
+        <div class="tags">
+          Show All | {{site.posts.size}}
+        </div>
+        <hr>
         <div class="tags">
           {% capture categories %}
-          {% for cat in site.categories %}{% if cat[1].size > 0 %}
+          {% for cat in site.categories %}
           <a data-sort="{{ site.posts.size | minus: cat[1].size | prepend: '0000' | slice: -4, 4 }}"
-            href="{{ site.baseurl }}/categories/?categories={{ cat[0] | url_encode }}" title="{{ cat[0] }}"
-            rel="{{ cat[1].size }}">{{ cat[0] }} / {{ cat[1].size }}</a>__SEPARATOR__
-          {% endif %}{% endfor %}
+            data-encode="{{ cat[0] | strip | url_encode }}"
+            href="{{ site.baseurl }}/categories/?categories={{ cat[0] | url_encode }}" class="tag-button"
+            title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} / {{ cat[1].size }}</a>__SEPARATOR__
+          {% endfor %}
           {% endcapture %}
           {{ categories | split:'__SEPARATOR__' | sort }}
         </div>
@@ -102,6 +41,54 @@ layout: default
 
       <!-- Ads -->
       {% include ads.html %}
+    </div>
+
+    <!-- PostList Container -->
+    <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12
+        col-xs-12 postlist-container">
+      <!-- Article List -->
+
+      {%- for _article in site.posts -%}
+      {%- assign _categories = '' -%}
+      {%- for _cat in _article.categories -%}
+      {%- assign _cat_encode = _cat | strip | url_encode -%}
+      {%- if forloop.last -%}
+      {%- assign _categories = _categories | append: _cat_encode -%}
+      {%- else -%}
+      {%- assign _categories = _categories | append: _cat_encode | append: ',' -%}
+      {%- endif -%}
+      {%- endfor -%}
+
+      {%- assign _currentcat = _article.categories -%}
+      {%- if _currentcat != _date -%}
+      {%- unless forloop.first -%}</section>{%- endunless -%}
+      <section>
+        <span class="fa listing-seperator">
+          <span class="tag-text">{{ _currentcat }}</span>
+        </span>
+        {%- assign _date = _currentcat -%}
+        {%- endif -%}
+
+        <div class="post-preview item" data-categories="{{ _categories }}">
+          <a href="{{ _article.url | prepend: site.baseurl }}">
+            <h2 class="post-title">
+              {{ _article.title }}
+            </h2>
+            {% if _article.subtitle %}
+            <h3 class="post-subtitle">
+              {{ _article.subtitle }}
+            </h3>
+            {% endif %}
+
+          </a>
+          <p class="post-meta">
+            {{ _article.categories }}  |  Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ _article.date |
+            date:"%B %-d, %Y" }}
+          </p>
+        </div>
+        {%- if forloop.last -%}
+      </section>{%- endif -%}
+      {% endfor %}
     </div>
   </div>
 </div>
