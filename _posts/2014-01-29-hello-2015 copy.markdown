@@ -9,6 +9,7 @@ header-style: text
 catalog: true
 hidden: false
 topmost: false
+comments: true
 tags:
     - Meta
 ---
