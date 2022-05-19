@@ -26,21 +26,21 @@ highlighter: rouge
 permalink: pretty
 paginate: 10
 exclude:
-    [
-        "less",
-        "node_modules",
-        "Gruntfile.js",
-        "package.json",
-        "README.md",
-        "README.zh.md",
-    ]
+  [
+      "less",
+      "node_modules",
+      "Gruntfile.js",
+      "package.json",
+      "README.md",
+      "README.zh.md",
+  ]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN
+timezone: CN
 
 # Gems
 # `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate]
+plugins: [ jekyll-paginate ]
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -48,13 +48,13 @@ plugins: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-    input: GFM # use Github Flavored Markdown !important
-    syntax_highlighter_opts:
-        span:
-            line_numbers: false
-        block:
-            line_numbers: true
-            start_line: 1
+  input: GFM # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 # Disqus settings
 disqus_username: erains-blog
@@ -88,13 +88,13 @@ page-mathjax: false
 
 # Friends
 friends:
-    [
-        { title: "乱序（Midare）", href: "http://mida.re/" },
-        { title: "Hux", href: "https://huangxuan.me/" },
-    ]
+  [
+    { title: "乱序（Midare）", href: "http://mida.re/" },
+    { title: "Hux", href: "https://huangxuan.me/" },
+  ]
 
 simple_jekyll_search:
-    # 是否支持全文搜索
-    fulltext: false
-    # 最多显示多少条搜索结果
-    limit: 10
+  # 是否支持全文搜索
+  fulltext: false
+  # 最多显示多少条搜索结果
+  limit: 10
