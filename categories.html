@@ -14,67 +14,55 @@ layout: default
         col-xs-12 sidebar-container">
             {% include sidebar-search.html %}
             <!-- categories -->
-            <div id='tag_cloud' class="tags tags-sup js-tags">
+            <div class="tags tags-sup js-tags">
                 <a class="tag-button--all" data-encode="">
-                    Show All
-                    <sup>{{site.posts.size}}</sup>
+                    All Directions （{{site.posts.size}}）
                 </a>
+                <hr>
 
-                {% capture tags %}
-                {% for tag in site.tags %}
-                <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -4, 4 }}"
+                {% for tag in site.categories %}
+                <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -10, 10 }}"
                    data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
                    rel="{{ tag[1].size }}">
                     {{ tag[0] }}
-                    <sup>{{tag[1].size}}</sup>
-                </a>__SEPERATOR__
+                    <sup> {{tag[1].size}}</sup>
+                </a>
                 {% endfor %}
-                {% endcapture %}
-                {{ tags | split:'__SEPERATOR__' | sort }}
             </div>
 
             <!-- Short About -->
             {% include short-about.html %}
-
             <!-- Friends Blog -->
-            {% include friends.html %}
-
+<!--            {% include friends.html %}-->
             <!-- Ads -->
             {% include ads.html %}
         </div>
 
         <!-- PostList Container -->
-        <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12
-        col-xs-12 postlist-container">
+        <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 col-xs-12 postlist-container">
             <!-- Article List -->
             <div class="mini-post-list js-result d-none">
-                {%- assign _sorted_list = site.posts -%}
-                {%- assign _sorted_list = _sorted_list | sort: 'date' -%}
-                {%- assign _sorted_list = _sorted_list | reverse -%}
-
-                {%- for _article in _sorted_list -%}
-                {%- assign _tags = '' -%}
-                {%- for _tag in _article.tags -%}
+                {%- for _article in site.posts -%}
+                {%- assign _cats = '' -%}
+                {%- for _tag in _article.categories -%}
                 {%- assign _tag_encode = _tag | strip | url_encode -%}
                 {%- if forloop.last -%}
-                {%- assign _tags = _tags | append: _tag_encode -%}
+                {%- assign _cats = _cats | append: _tag_encode -%}
                 {%- else -%}
-                {%- assign _tags = _tags | append: _tag_encode | append: ',' -%}
+                {%- assign _cats = _cats | append: _tag_encode | append: ',' -%}
                 {%- endif -%}
                 {%- endfor -%}
 
-                {% comment %} group by year {% endcomment %}
-                {%- assign _currentdate = _article.date | date: '%Y' -%}
-                {%- if _currentdate != _date -%}
-                {%- unless forloop.first -%}</section>{%- endunless -%}
+                {%- assign _currentCat = _article.categories -%}
+                {%- if _currentCat != _date -%}
                 <section>
 					<span class="fa listing-seperator">
-						<span class="tag-text">{{ _currentdate }}</span>
+						<span class="tag-text">{{ _currentCat }}</span>
 					</span>
-                    {%- assign _date = _currentdate -%}
+                    {%- assign _date = _currentCat -%}
                     {%- endif -%}
 
-                    <div class="post-preview item" data-tags="{{ _tags }}">
+                    <div class="post-preview item" data-tags="{{ _cats }}">
                         <a href="{{ _article.url | prepend: site.baseurl }}">
                             <h2 class="post-title">
                                 {{ _article.title }}
@@ -85,6 +73,9 @@ layout: default
                             </h3>
                             {% endif %}
                         </a>
+                        <p class="post-meta">
+                            {{ _article.date | date: "%B %-d, %Y" }} | {{ _article.categories }}
+                        </p>
                         <hr>
                     </div>
                     {%- if forloop.last -%}
@@ -92,15 +83,11 @@ layout: default
                 {%- endif -%}
                 {% endfor %}
             </div>
-
         </div>
     </div>
 </div>
 
 {% if site.page-mathjax %}
-<!-- Add support for Mathjax by Voleking-->
-<!-- If you want to see formulars well in post preview, Maybe you should add this.-->
-<!-- However, most of the time formulars may not appear in the post preview, you can delete it.-->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       TeX: {
@@ -114,11 +101,9 @@ layout: default
         processEscapes: true,
       }
     });
-
-
-
-
 </script>
+
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 {% endif %}

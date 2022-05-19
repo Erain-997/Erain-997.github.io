@@ -6,9 +6,9 @@ https://github.com/kitian616/jekyll-TeXt-theme
     function queryString() {
         // This function is anonymous, is executed immediately and
         // the return value is assigned to QueryString!
-        var i = 0, queryObj = {}, pair;
-        var queryStr = window.location.search.substring(1);
-        var queryArr = queryStr.split('&');
+        let i = 0, queryObj = {}, pair;
+        const queryStr = window.location.search.substring(1);
+        const queryArr = queryStr.split('&');
         for (i = 0; i < queryArr.length; i++) {
             pair = queryArr[i].split('=');
             // If first entry with this name
@@ -123,7 +123,7 @@ https://github.com/kitian616/jekyll-TeXt-theme
                 if (_tag === '' || typeof _tag !== 'string') {
                     setUrlQuery();
                 } else {
-                    setUrlQuery('?tag=' + _tag);
+                    setUrlQuery('?categories=' + _tag);
                 }
             } else {
                 buttonFocus(searchButtonsByTag(tag));
