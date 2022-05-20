@@ -7,84 +7,83 @@ layout: default
 
 <!-- Main Content -->
 <div class="container">
-    <div class="row">
-        <!-- USE SIDEBAR -->
-        <!-- Sidebar Container -->
-        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12
+  <div class="row">
+    <!-- USE SIDEBAR -->
+    <!-- Sidebar Container -->
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-12
         col-xs-12 sidebar-container">
-            {% include sidebar-search.html %}
-            <!-- categories -->
-            <div class="tags tags-sup js-tags">
-                <a class="tag-button--all" data-encode="">
-                    All Directions （{{site.posts.size}}）
-                </a>
-                <hr>
+      {% include sidebar-search.html %}
+      <!-- categories -->
+      <div class="tags tags-sup js-tags">
+        <a class="tag-button--all" data-encode="">
+          All Directions （{{site.posts.size}}）
+        </a>
+        <hr>
 
-                {% for tag in site.categories %}
-                <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -10, 10 }}"
-                   data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
-                   rel="{{ tag[1].size }}">
-                    {{ tag[0] }}
-                    <sup> {{tag[1].size}}</sup>
-                </a>
-                {% endfor %}
-            </div>
+        {% for tag in site.categories reversed %}
+        <a data-sort="{{ site.posts.size | minus: tag[1].size | prepend: '0000' | slice: -10, 10 }}"
+          data-encode="{{ tag[0] | strip | url_encode }}" class="tag-button" title="{{ tag[0] }}"
+          rel="{{ tag[1].size }}">
+          {{ tag[0] }} | {{tag[1].size}}
+        </a>
+        {% endfor %}
+      </div>
 
-            <!-- Short About -->
-            {% include short-about.html %}
-            <!-- Friends Blog -->
-<!--            {% include friends.html %}-->
-            <!-- Ads -->
-            {% include ads.html %}
-        </div>
-
-        <!-- PostList Container -->
-        <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 col-xs-12 postlist-container">
-            <!-- Article List -->
-            <div class="mini-post-list js-result d-none">
-                {%- for _article in site.posts -%}
-                {%- assign _cats = '' -%}
-                {%- for _tag in _article.categories -%}
-                {%- assign _tag_encode = _tag | strip | url_encode -%}
-                {%- if forloop.last -%}
-                {%- assign _cats = _cats | append: _tag_encode -%}
-                {%- else -%}
-                {%- assign _cats = _cats | append: _tag_encode | append: ',' -%}
-                {%- endif -%}
-                {%- endfor -%}
-
-                {%- assign _currentCat = _article.categories -%}
-                {%- if _currentCat != _date -%}
-                <section>
-					<span class="fa listing-seperator">
-						<span class="tag-text">{{ _currentCat }}</span>
-					</span>
-                    {%- assign _date = _currentCat -%}
-                    {%- endif -%}
-
-                    <div class="post-preview item" data-tags="{{ _cats }}">
-                        <a href="{{ _article.url | prepend: site.baseurl }}">
-                            <h2 class="post-title">
-                                {{ _article.title }}
-                            </h2>
-                            {% if _article.subtitle %}
-                            <h3 class="post-subtitle">
-                                {{ _article.subtitle }}
-                            </h3>
-                            {% endif %}
-                        </a>
-                        <p class="post-meta">
-                            {{ _article.date | date: "%B %-d, %Y" }} | {{ _article.categories }}
-                        </p>
-                        <hr>
-                    </div>
-                    {%- if forloop.last -%}
-                </section>
-                {%- endif -%}
-                {% endfor %}
-            </div>
-        </div>
+      <!-- Short About -->
+      {% include short-about.html %}
+      <!-- Friends Blog -->
+      <!--            {% include friends.html %}-->
+      <!-- Ads -->
+      {% include ads.html %}
     </div>
+
+    <!-- PostList Container -->
+    <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 col-xs-12 postlist-container">
+      <!-- Article List -->
+      <div class="mini-post-list js-result d-none">
+        {%- for _article in site.posts -%}
+        {%- assign _cats = '' -%}
+        {%- for _tag in _article.categories -%}
+        {%- assign _tag_encode = _tag | strip | url_encode -%}
+        {%- if forloop.last -%}
+        {%- assign _cats = _cats | append: _tag_encode -%}
+        {%- else -%}
+        {%- assign _cats = _cats | append: _tag_encode | append: ',' -%}
+        {%- endif -%}
+        {%- endfor -%}
+
+        {%- assign _currentCat = _article.categories -%}
+        {%- if _currentCat != _date -%}
+        <section>
+          <span class="fa listing-seperator">
+            <span class="tag-text">{{ _currentCat }}</span>
+          </span>
+          {%- assign _date = _currentCat -%}
+          {%- endif -%}
+
+          <div class="post-preview item" data-tags="{{ _cats }}">
+            <a href="{{ _article.url | prepend: site.baseurl }}">
+              <h2 class="post-title">
+                {{ _article.title }}
+              </h2>
+              {% if _article.subtitle %}
+              <h3 class="post-subtitle">
+                {{ _article.subtitle }}
+              </h3>
+              {% endif %}
+            </a>
+            <p class="post-meta">
+              {{ _article.date | date: "%B %-d, %Y" }} | {{ _article.categories }}
+            </p>
+            <hr>
+          </div>
+          {%- if forloop.last -%}
+        </section>
+        {%- endif -%}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>
 
 {% if site.page-mathjax %}
@@ -104,6 +103,6 @@ layout: default
 </script>
 
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 {% endif %}
