@@ -40,6 +40,7 @@ layout: default
     <!-- PostList Container -->
     <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-sm-12 col-xs-12 postlist-container">
       <!-- Article List -->
+      <hr style="visibility: hidden;">
       <div class="mini-post-list js-result d-none">
         {%- for _article in site.posts -%}
         {%- assign _cats = '' -%}
@@ -82,6 +83,7 @@ layout: default
         {%- endif -%}
         {% endfor %}
       </div>
+      <hr style="visibility: hidden;">
     </div>
   </div>
 </div>

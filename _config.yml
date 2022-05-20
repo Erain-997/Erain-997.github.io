@@ -36,7 +36,7 @@ exclude:
   ]
 anchorjs: true # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-timezone: CN
+# timezone: CN
 
 # Gems
 # `$ gem install jekyll-paginate`
@@ -58,7 +58,6 @@ kramdown:
 
 # Disqus settings
 disqus_username: erains-blog
-# duoshuo_username:
 
 # Netease settings
 netease_comment: false
