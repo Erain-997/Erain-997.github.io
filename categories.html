@@ -53,15 +53,14 @@ layout: default
         {%- endif -%}
         {%- endfor -%}
 
-        {%- assign _currentCat = _article.categories -%}
+        {%- assign _currentCat = _article.categories | sort-%}
         {%- if _currentCat != _date -%}
         <section>
-          <span class="fa listing-seperator">
-            <span class="tag-text">{{ _currentCat }}</span>
-          </span>
+
           {%- assign _date = _currentCat -%}
           {%- endif -%}
 
+          <hr class="tag-text">{{ _article.categories }}</hr>
           <div class="post-preview item" data-tags="{{ _cats }}">
             <a href="{{ _article.url | prepend: site.baseurl }}">
               <h2 class="post-title">
