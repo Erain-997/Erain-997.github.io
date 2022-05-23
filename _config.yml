@@ -13,6 +13,7 @@ future: true
 # SNS settings
 RSS: false
 main_scene: https://Erain-997.github.io
+author: Erain
 # weibo_username:     
 # zhihu_username:     
 # github_username:    
@@ -88,7 +89,7 @@ page-mathjax: false
 # Friends
 friends:
   [
-    { title: "乱序（Midare）", href: "http://mida.re/" },
+    { title: "乱序", href: "http://mida.re/" },
     { title: "Hux", href: "https://huangxuan.me/" },
   ]
 
