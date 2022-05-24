@@ -1,9 +1,10 @@
 ---
 layout: page
-title: "About"
+title: About
 description: "《Nothing》"
 header-img: "img/about-bg.jpg"
 multilingual: true
+catalog: true
 ---
 
 {% include multilingual-sel.html %}
@@ -20,6 +21,21 @@ multilingual: true
     {{ about_en | markdownify }}
 </div>
 
+{% unless page.no-catalog %}
+<div class="
+    col-lg-8 col-lg-offset-8
+    visible-lg-block
+    sidebar-container
+    catalog-container">
+    <div class="side-catalog">
+        <hr class="hidden-sm hidden-xs">
+        <h5>
+            <a class="catalog-toggle" href="#">CATALOG</a>
+        </h5>
+        <ul class="catalog-body"></ul>
+    </div>
+</div>
+{% endunless %}
 
 {% if site.disqus_username %}
 <!-- disqus 评论框 start -->

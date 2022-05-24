@@ -4,7 +4,7 @@ title:      Golang-Runtime
 subtitle:   golang基本语法，Runtime
 date:       2022-05-20
 author:     Erain
-header-img: /img/home-bg.jpg
+header-img: img/home-bg.jpg
 categories: Golang
 topmost: true
 catalog: true
