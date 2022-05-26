@@ -9,7 +9,7 @@ categories: Code-Go
 catalog: true
 tags:
     - Golang
-    - Code
+    - Go包
 ---
 # 代码
 ```go
