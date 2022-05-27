@@ -91,6 +91,7 @@ friends:
   [
     { title: "乱序", href: "http://mida.re/" },
     { title: "Hux", href: "https://huangxuan.me/" },
+    { title: "码志", href: "https://mazhuang.org/" },
   ]
 
 simple_jekyll_search:
