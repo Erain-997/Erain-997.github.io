@@ -11,7 +11,16 @@ tags:
     - Golang
     - Go包
 ---
-# 代码
+
+# 说明
+该包用于设置启动程序时需要的参数，然后系统根据传入的参数运行特定的代码
+注：
+- 其中代码中的 *flag.Parse()* 用于解析传入的参数
+- 在main函数中貌似没有办法使用*flag.Args()*
+
+# 基础用法--main
+
+## 代码
 ```go
 /**
  * @Author: Erain
@@ -38,11 +47,6 @@ func main() {
 }
 ```
 
-# 说明
-该包用于设置启动程序时需要的参数，然后系统根据传入的参数运行特定的代码
-ps.其中代码中的 *flag.Parse()* 用于解析传入的参数
-
-# 用法
 - 默认运行		
 ```
 go run main\20220523.go
@@ -81,3 +85,65 @@ Usage of C:\Users\ADMIN\AppData\Local\Temp\go-build306542866\b001\exe\20220523.e
         Choose Times (default 123)
 exit status 2
 ```
+
+
+# 基础用法--test
+
+## 代码
+```go
+/**
+ * @Author: Erain
+ * @Date: 2022/5/23
+ */
+var modules []string
+var Times int
+
+func init()  {
+	testing.Init()// 初始化test
+	flag.IntVar(&Times,"Times", 123, "Choose Times")
+	flag.Parse() // 参数解析
+	modules = flag.Args()
+}
+
+func Test0531(t *testing.T) {
+	fmt.Println("Times:", Times)
+	fmt.Println("modules:", modules)
+}
+```
+
+- 指定参数运行
+```
+go test -v 20220531_test.go -Times 666 -args haha
+```
+输出：
+```
+=== RUN   Test0531
+Times: 666
+modules: [haha]
+--- PASS: Test0531 (0.00s)
+PASS
+ok      command-line-arguments  0.178s
+```
+
+于main不同的是，go test没有help函数查看命令行参数用法，必要时配合项目文档使用。
+
+
+# 问题记录
+在*main*函数中使用是最好的用法，但是如果要封装，使用go test去运行也是可以的。用法于在main中有些许不同。
+
+## 单元测试，参数不生效：flag provided but not defined: -test.v
+![](/img/post/Golang/flag.png)
+
+**问题追溯**
+1. 查看flag包源码，定位到这个报错由flag包的Parse()方法调用时抛出。
+2. 考虑到test本身就是个框架，把flag参数放于框架内可能会有问题，于是做了以下尝试：
+   ![](/img/post/Golang/flag2.png)
+   发现将自定义参数接收放于全局变量中，会生效，得出结论：在运行testing中，flag参数还未被解析
+
+**问题解决**
+问题定位是参数解析顺序有问题，于是有解决方法：控制代码依次执行：初始化test->初始化flag参数->运行test。代码如上述。
+
+## 单元测试中，flag.Args()在flag.Parse()之前调用无效
+![](/img/post/Golang/flag.png)
+
+20220261：至今不理解，玄学问题
