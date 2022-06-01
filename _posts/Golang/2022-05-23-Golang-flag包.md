@@ -147,3 +147,54 @@ ok      command-line-arguments  0.178s
 ![](/img/post/Golang/flag.png)
 
 20220261：至今不理解，玄学问题
+
+## flag是支持嵌套的
+
+并且嵌套的flag可以不一样，是独立的
+
+终端运行 go run main.go -R 111
+
+*main*函数
+```go
+func main() {
+	// 项目入参
+	var f tools.Flag
+	flag.StringVar(&f.Mirror, "M", "uatAddress", "可选环境有：petTproAddress、petAddress，要新增需兼容")
+	flag.IntVar(&f.LogicalRegionId, "L", 1092, "逻辑大区id")
+	flag.IntVar(&f.ServerId, "S", 8045, "区服id")
+	flag.StringVar(&f.Modules, "C", "", "模块名称，不填则为全模块，以逗号间隔")
+	flag.Parse() // 参数解析
+
+	var args = []string{"test", "-v", "test-cases"}
+	if f.Mirror != "uatAddress" {
+		args = append(args, "-M", f.Mirror)
+	}
+	if f.LogicalRegionId != 1091 {
+		args = append(args, "-L", strconv.Itoa(f.LogicalRegionId))
+	}
+	if f.ServerId != 8045 {
+		args = append(args, "-S", strconv.Itoa(f.ServerId))
+	}
+	if len(f.Modules) > 0 {
+		args = append(args, "-C", f.Modules)
+	}
+
+	cmd := exec.Command("go", args...)
+	outPut, err := cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(outPut))
+```
+
+*test* 函数
+```go
+func init() {
+	testing.Init() // test初始化
+	flag.StringVar(&f.Mirror, "M", "uatAddress", "可选环境有：petTproAddress、petAddress、neAddress，要新增需兼容")
+	flag.IntVar(&f.LogicalRegionId, "L", 1092, "逻辑大区id")
+	flag.IntVar(&f.ServerId, "S", 8045, "区服id")
+	flag.StringVar(&f.Modules, "C", "", "模块名称，不填则为全模块，以逗号为间隔")
+	flag.Parse() // 参数解析
+}
+```
