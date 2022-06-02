@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Code-flag包
+title:      Golang-flag包
 subtitle:   flag包基础用法，包路径/src/flag
 date:       2022-05-23
 author:     Erain
@@ -144,7 +144,7 @@ ok      command-line-arguments  0.178s
 问题定位是参数解析顺序有问题，于是有解决方法：控制代码依次执行：初始化test->初始化flag参数->运行test。代码如上述。
 
 ## 单元测试中，flag.Args()在flag.Parse()之前调用无效
-![](/img/post/Golang/flag.png)
+![](/img/post/Golang/flag3.png)
 
 20220261：至今不理解，玄学问题
 

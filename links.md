@@ -26,6 +26,10 @@ catalog: true
 - [Go语言高级编程(Advanced Go Programming)](https://chai2010.cn/advanced-go-programming-book/)
 - [《Effective Go》中英双语版](https://bingohuang.gitbooks.io/effective-go-zh-en/content/)
 
+
+### 奇怪的资源
+- [测试派](http://testingpai.com/domains)
+
 ### 面试
 - [Go语言面试题](https://topgoer.cn/docs/gomianshiti/mian56)
 
