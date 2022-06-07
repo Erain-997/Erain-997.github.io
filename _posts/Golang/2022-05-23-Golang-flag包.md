@@ -5,7 +5,7 @@ subtitle:   flag包基础用法，包路径/src/flag
 date:       2022-05-23
 author:     Erain
 header-img: img/home-bg.jpg
-categories: Code-Go
+categories: Golang
 catalog: true
 tags:
     - Golang
