@@ -15,6 +15,7 @@ catalog: true
 - [go语言学习](https://www.topgoer.com/)
 - [go101](https://gfw.go101.org/article/line-break-rules.html)
 - [Go](http://docscn.studygolang.com/pkg/fmt/)
+- [Go中文标准文档](http://word.topgoer.com/)
 
 ### 进阶
 - [GO专家编程](https://www.topgoer.cn/docs/gozhuanjia/gogfjhk)
