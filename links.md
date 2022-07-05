@@ -11,11 +11,15 @@ catalog: true
 # Erain learning...
 
 ### 学习手册
+GO：
 - [Go语言设计与实现](https://draveness.me/golang/)
 - [go语言学习](https://www.topgoer.com/)
 - [go101](https://gfw.go101.org/article/line-break-rules.html)
 - [Go](http://docscn.studygolang.com/pkg/fmt/)
 - [Go中文标准文档](http://word.topgoer.com/)
+
+Python：
+- [Pytest-快速入门和基础讲解](https://www.cnblogs.com/poloyy/p/12641505.html)
 
 ### 进阶
 - [GO专家编程](https://www.topgoer.cn/docs/gozhuanjia/gogfjhk)
