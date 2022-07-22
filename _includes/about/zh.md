@@ -13,15 +13,16 @@
 - HTTP协议
 
 ### Python
-- PEP 8 编码规范
 - 接口自动化测试框架
 - Pytest
 - Allure
 - Django
 
 ### Go
-接口自动化
-boomer-Locust压测
+- 接口服务
+- API测试(Restful)
+- boomer-Locust压测
+
 
 ### Git
 - 常用命令
