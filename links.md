@@ -36,6 +36,7 @@ Python：
 ### 奇怪的资源
 - [测试派](http://testingpai.com/domains)
 - [奇趣网站收藏夹](https://fuun.fun/)
+- [果汁实验室](http://guozhivip.com/lab/)
 
 > [神奇宝贝](https://yx.g8hh.com/pokeclicker/)
 
