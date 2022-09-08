@@ -5,7 +5,7 @@ subtitle:   Elasticsearch是与名为Logstash的数据收集和日志解析引�
 date:       2022-05-23 
 author:     Erain 
 header-img: img/home-bg.jpg 
-categories: None 
+categories: 压测 
 catalog: true 
 tags:
 - Kibana
