@@ -24,6 +24,7 @@ Python：
 
 ### 进阶
 - [GO专家编程](https://www.topgoer.cn/docs/gozhuanjia/gogfjhk)
+- [高性能编程](https://geektutu.com/post/hpg-string-concat.html)
 
 #### 大佬学习笔记
 - [Go从入门到放弃（目录）](https://www.cnblogs.com/nickchen121/p/11517502.html)
