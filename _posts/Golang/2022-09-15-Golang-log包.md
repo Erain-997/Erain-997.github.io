@@ -9,6 +9,7 @@ categories: Golang
 catalog: true
 tags:
     - Golang
+    - Go包
 ---
 
 # log的基础使用
